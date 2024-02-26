@@ -165,9 +165,9 @@ from
 
 #
 
-  benchmark "bpost_custom" {
-    title       = "Bpost Architecture"
-    description = "Bpost Architecture Guardrails"
+  benchmark "new_custom_benchmark" {
+    title       = "Architecture"
+    description = "Architecture Guardrails"
     children = [
       control.wafv2_web_acl_logging_enabled,
       control.alb_attached_to_waf,
