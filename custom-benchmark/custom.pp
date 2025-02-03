@@ -2,6 +2,7 @@ control "wafv2_web_acl_logging_enabled" {
     title       = "Logging should be enabled on AWS WAFv2 regional and global web access control list (ACLs)"
     description = "To help with logging and monitoring within your environment, enable AWS WAF (V2) logging on regional and global web ACLs."
     query       = query.wafv2_web_acl_logging_enabled
+    severity    = "low"
   }
   
   query "wafv2_web_acl_logging_enabled" {
@@ -26,6 +27,7 @@ control "wafv2_web_acl_logging_enabled" {
     title       = "A WAFV2 web ACL should have at least one rule or rule group"
     description = "This control checks whether a WAFV2 web access control list (web ACL) contains at least one WAF rule or WAF rule group. The control fails if a web ACL does not contain any WAF rules or rule groups."
     query       = query.wafv2_web_acl_rule_attached
+    severity    = "high"
     }
   
   
@@ -96,6 +98,7 @@ from
     title       = "Public facing ALB are protected by AWS Web Application Firewall v2 (AWS WAFv2)"
     description = "Ensure public facing ALB are protected by AWS Web Application Firewall v2 "
     query       = query.alb_attached_to_waf
+    severity    = "medium"
     }
   
 #
@@ -104,6 +107,7 @@ from
     title       = "EC2 auto scaling groups should cover multiple availability zones"
     description = "This control checks whether an AWS EC2 Auto Scaling group spans multiple availability zones. The control fails if an auto scaling group does not span multiple availability zones."
     query       = query.autoscaling_group_multiple_az_configured
+    severity    = "high"
     }
 
   query "autoscaling_group_multiple_az_configured" {
@@ -128,6 +132,7 @@ from
     title       = "S3 buckets should have lifecycle policies configured"
     description = "This control checks if AWS Simple Storage Service (AWS S3) version enabled buckets have lifecycle policy configured. This rule fails if AWS S3 lifecycle policy is not enabled"
     query       = query.s3_bucket_versioning_and_lifecycle_policy_enabled
+    severity    = "high"
     }
 
   query "s3_bucket_versioning_and_lifecycle_policy_enabled" {
