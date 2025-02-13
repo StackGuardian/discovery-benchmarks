@@ -1,9 +1,13 @@
+# Possible severity levels for the controls
+#  "critical","high","medium","low"
+
 control "wafv2_web_acl_logging_enabled" {
     title       = "Logging should be enabled on AWS WAFv2 regional and global web access control list (ACLs)"
     description = "To help with logging and monitoring within your environment, enable AWS WAF (V2) logging on regional and global web ACLs."
     query       = query.wafv2_web_acl_logging_enabled
     severity    = "low"
   }
+  
   
   query "wafv2_web_acl_logging_enabled" {
     sql = <<-EOQ
